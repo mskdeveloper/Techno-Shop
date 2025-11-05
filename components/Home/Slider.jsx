@@ -13,6 +13,8 @@ import heroImage3 from "../../public/images/page/hero-3.png";
 const Slider = () => {
   return (
     <>
+      <div className="bg-element"></div>
+
       {/* HERO */}
       <div className="hero-bg">
         <header className="py-20 container mx-auto">
@@ -31,21 +33,21 @@ const Slider = () => {
               <div className="hero flex gap-8">
                 <div className="hero-content flex flex-col justify-start items-start w-1/2">
                   <h1 className="text-9xl font-bricolage">
-                    THE NEW <br /> STANDARD
+                    ورژن <br /> استاندارد
                   </h1>
-                  <h5 className="font-bold text-xl">
-                    Under FAVORABLE SMARTWATCHES
+                  <h5 className="font-extrabold text-lg">
+                    بروزترین ساعت های هوشمند
                   </h5>
                   <span className="hero-span text-3xl text-gray-800 font-semibold mt-3">
-                    FROM <br />
+                    از <br />
                     <div className="text-6xl font-bold text-gray-800">
-                      <sup>$</sup>
-                      748
-                      <sup>99</sup>
+                      <sup>تومان</sup>
+                      6500
+                      <sup>000</sup>
                     </div>
                   </span>
                   <button className="bg-yellow-400 p-3 rounded-md font-semibold text-xl mt-5 hover:bg-yellow-500 transition ">
-                    Start Buying
+                    آغاز خرید
                   </button>
                 </div>
                 <div className="hero-image hide w-1/2">
@@ -57,21 +59,21 @@ const Slider = () => {
               <div className="hero flex gap-8">
                 <div className="hero-content flex flex-col justify-start items-start w-1/2">
                   <h1 className="text-9xl font-bricolage">
-                    THE NEW <br /> STANDARD
+                    ورژن <br /> استاندارد
                   </h1>
                   <h5 className="font-bold text-xl">
-                    Under FAVORABLE SMARTWATCHES
+                    بروزترین ساعت های هوشمند
                   </h5>
                   <span className="hero-span text-3xl text-gray-800 font-semibold mt-3">
-                    FROM <br />
+                    از <br />
                     <div className="text-6xl font-bold text-gray-800">
-                      <sup>$</sup>
-                      748
-                      <sup>99</sup>
+                      <sup>تومان</sup>
+                      3900
+                      <sup>000</sup>
                     </div>
                   </span>
                   <button className="bg-yellow-400 p-3 rounded-md font-semibold text-xl mt-5 hover:bg-yellow-500 transition ">
-                    Start Buying
+                    آغاز خرید
                   </button>
                 </div>
                 <div className="hero-image hide w-1/2">
@@ -83,21 +85,21 @@ const Slider = () => {
               <div className="hero flex gap-8">
                 <div className="hero-content flex flex-col justify-start items-start w-1/2">
                   <h1 className="text-9xl font-bricolage">
-                    THE NEW <br /> STANDARD
+                    ورژن <br /> استاندارد
                   </h1>
                   <h5 className="font-bold text-xl">
-                    Under FAVORABLE SMARTWATCHES
+                    بروزترین ساعت های هوشمند
                   </h5>
                   <span className="hero-span text-3xl text-gray-800 font-semibold mt-3">
-                    FROM <br />
+                    از <br />
                     <div className="text-6xl font-bold text-gray-800">
-                      <sup>$</sup>
-                      748
-                      <sup>99</sup>
+                      <sup>تومان</sup>
+                      8900
+                      <sup>000</sup>
                     </div>
                   </span>
                   <button className="bg-yellow-400 p-3 rounded-md font-semibold text-xl mt-5 hover:bg-yellow-500 transition ">
-                    Start Buying
+                    آغاز خرید
                   </button>
                 </div>
                 <div className="hero-image hide w-1/2">

@@ -10,7 +10,7 @@ import Link from "next/link";
 const TopNav = () => {
   return (
     <>
-      <div className="top-nav w-full flex justify-between items-center bg-black text-white px-[8%] lg:px-[12%] py-3 text-sm">
+      <div className="top-nav w-full flex justify-between items-center bg-gray-800 text-white px-[8%] lg:px-[12%] py-3 text-sm">
         <div className="flex w-1/2 gap-5 items-center">
           <p className="hide font-light">
             ارسال رایگان محصولات برای خرید بالای 7 میلیون تومان

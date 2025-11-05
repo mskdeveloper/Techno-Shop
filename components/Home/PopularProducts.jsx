@@ -37,10 +37,10 @@ const PopularProducts = () => {
       {/* Section Title */}
       <div className="container mx-auto section-title my-10">
         <span className="text-xl font-semibold bg-yellow-300 px-5 py-2 rounded-full">
-          Our Products
+          محصولات ما
         </span>
         <h1 className="text-5xl font-bold font-bricolage mt-5">
-          Popular Products
+          محصولات پرفروش
         </h1>
       </div>
       {/* Products */}
@@ -48,14 +48,14 @@ const PopularProducts = () => {
         {/* Specian Offer Card */}
         <div className="bg-white border-2 border-yellow-400 p-6 product-banner-wrap rounded-xl flex flex-col items-center justify-center text-center relative">
           <span className="text-xl text-white font-bold mb-1 bg-red-600 px-3 py-2 rounded">
-            Special Offer
+            پیشنهاد ویژه
           </span>
           <div className="absolute top-4 right-4 bg-yellow-400 text-white rounded-full h-16 w-16 flex items-center justify-center font-bold text-sm">
-            Save <br /> $120
+            دخیره <br /> 10%
           </div>
           <Image
-            width={45}
-            height={45}
+            width={90}
+            height={90}
             src={specialOffer.ProductsImage}
             alt={specialOffer.Name}
             className="w-4/5 mx-auto my-4"
@@ -66,17 +66,19 @@ const PopularProducts = () => {
               ${specialOffer.OldPrice}
             </span>
             <span className="text-red-600 text-xl font-bold">
-              ${specialOffer.Price}
+              تومان{specialOffer.Price}
             </span>
           </div>
           <div className="flex justify-between w-full mt-4 text-sm">
-            <span>Available: 6</span>
-            <span>Already Sold: 27</span>
+            <span>موجودی: 6</span>
+            <span>فروش رفته: 27</span>
           </div>
           <div className="w-full bg-gray-200 h-2 rounded-full mt-1 overflow-hidden">
             <div className="bg-yellow-400 w-1/5 h-full"></div>
           </div>
-          <p className="mt-3 text-gray-700 text-sm">Hurry Up! Offer Ends In:</p>
+          <p className="mt-3 text-gray-700 text-sm">
+            عجله کنید: پیشنهاد تمام می شود در
+          </p>
         </div>
         {/* Products Cards */}
         <div className="lg:col-span-3">
@@ -90,8 +92,8 @@ const PopularProducts = () => {
                   {product.Category}
                 </p>
                 <Image
-                  width={45}
-                  height={45}
+                  width={90}
+                  height={90}
                   src={product.ProductsImage}
                   alt={product.Name}
                   className="w-4/5 h-32 object-contain group-hover:scale-105 transition-transform duration-300"
@@ -106,7 +108,7 @@ const PopularProducts = () => {
                 <div className="flex mt-5 flex-row items-center justify-between w-full">
                   <div className="mt-1 text-md">
                     <span className="text-lg font-semibold mt-1">
-                      ${product.Price}
+                      تومان {product.Price}
                     </span>
                   </div>
                   <button

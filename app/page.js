@@ -5,7 +5,6 @@ import PopularProducts from "../components/Home/PopularProducts";
 const page = () => {
   return (
     <>
-      <div className="bg-element"></div>
       <Slider />
       <Banners />
       <PopularProducts />
