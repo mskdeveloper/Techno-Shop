@@ -97,10 +97,10 @@ const PopularProducts = () => {
                   src={product.ProductsImage}
                   alt={product.Name}
                   className="w-4/5 h-32 object-contain group-hover:scale-105 transition-transform duration-300"
-                  onClick={() => navigate(`/product/${product.Id}`)}
+                  onClick={() => navigate.push(`/product/${product.Id}`)}
                 />
                 <h4
-                  onClick={() => navigate(`/product/${product.Id}`)}
+                  onClick={() => navigate.push(`/product/${product.Id}`)}
                   className="text-lg font-medium mt-3 text-yellow-800 hover:underline line-clamp-2"
                 >
                   {product.Name}
