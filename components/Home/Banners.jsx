@@ -1,10 +1,3 @@
-import React from "react";
-// import banner1 from "/images/page/banner-1.jpg";
-// import banner2 from "/images/page/banner-2.jpg";
-// import banner3 from "/images/page/banner-3.jpg";
-// import banner4 from "/images/page/banner-4.jpg";
-// import banner5 from "/images/page/banner-5.jpg";
-
 const Banners = () => {
   return (
     <>
