@@ -18,12 +18,12 @@ const BottomNav = () => {
   const [open, setOpen] = useState(false);
 
   const categories = [
-    ["Smartphone", <FcPhoneAndroid />],
-    ["Laptop", <FcFrame />],
-    ["Camera", <FcCamera />],
-    ["Headphones", <FcHeadset />],
-    ["Tablets", <FcIpad />],
-    ["Television", <FcSelfServiceKiosk />],
+    ["موبایل", <FcPhoneAndroid />],
+    ["لپ تاپ", <FcFrame />],
+    ["دوربین", <FcCamera />],
+    ["هدفون", <FcHeadset />],
+    ["کنسول", <FcIpad />],
+    ["دسته کنسول", <FcSelfServiceKiosk />],
   ];
   return (
     <>
@@ -38,10 +38,10 @@ const BottomNav = () => {
             onClick={() => setOpen(!open)}
           >
             <div className="flex items-center gap-2">
+              <span className="font-bold">دسته بندی محصولات</span>
               <span className="text-xl">
                 <AiOutlineMenu />
               </span>
-              <span className="font-bold">Shop Categories</span>
             </div>
           </div>
           {open && (
@@ -62,7 +62,7 @@ const BottomNav = () => {
         <ul className="flex gap-8 w-2/5 nav-menu font-bold">
           <li>
             <Link href="/" className="hover:text-yellow-500 text-xl transition">
-              Home
+              صفحه اصلی
             </Link>
           </li>
           <li>
@@ -70,7 +70,7 @@ const BottomNav = () => {
               href="/about"
               className="hover:text-yellow-500 text-xl transition"
             >
-              About
+              درباره ما
             </Link>
           </li>
           <li>
@@ -78,7 +78,7 @@ const BottomNav = () => {
               href="/shop"
               className="hover:text-yellow-500 text-xl transition"
             >
-              Shop
+              فروشگاه
             </Link>
           </li>
           <li>
@@ -86,7 +86,7 @@ const BottomNav = () => {
               href="/blog"
               className="hover:text-yellow-500 text-xl transition"
             >
-              Blog
+              وبلاگ
             </Link>
           </li>
           <li>
@@ -94,7 +94,7 @@ const BottomNav = () => {
               href="/faq"
               className="hover:text-yellow-500 text-xl transition"
             >
-              Faq
+              سوالات
             </Link>
           </li>
           <li>
@@ -102,7 +102,7 @@ const BottomNav = () => {
               href="/contact"
               className="hover:text-yellow-500 text-xl transition"
             >
-              Contact
+              ارتباط با ما
             </Link>
           </li>
         </ul>
@@ -111,9 +111,9 @@ const BottomNav = () => {
             <AiOutlineFire />
           </span>
           <div className="flex items-cente gap-2">
-            <span className="font-bold text-sm">Today's Deal</span>
+            <span className="font-bold text-sm">تخفیف امروز</span>
             <span className="bg-red-600 text-white text-xs px-2 pt-1 rounded-sm uppercase relative">
-              hot
+              داغ
             </span>
           </div>
         </Link>
