@@ -9,11 +9,18 @@ const page = () => {
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const updatedCart = storedCart.map((item) => ({
-      ...item,
-      price: parseFloat(item.price),
-      quantity: item.quantity || 1,
-    }));
+    console.log("storedCart:", storedCart); // برای بررسی شکل داده‌ها
+
+    const updatedCart = storedCart.map((item) => {
+      const rawPrice = item?.Price ?? 0;
+      // فقط اعداد، ممیز و منفی را نگه دار
+      const cleaned = String(rawPrice).replace(/[^\d.-]/g, "");
+      const parsedPrice = cleaned === "" ? 0 : parseFloat(cleaned);
+      const price = Number.isFinite(parsedPrice) ? parsedPrice : 0;
+      const quantity = Number(item?.quantity) || 1;
+      return { ...item, price, quantity };
+    });
+
     setCart(updatedCart);
   }, []);
 
@@ -173,7 +180,7 @@ const page = () => {
               {cart.map((item, i) => (
                 <div key={i} className="flex justify-between">
                   <span>
-                    {item.name} x {item.quantity}
+                    {item.Name} x {item.quantity}
                   </span>
                   <span>${(item.price * item.quantity).toFixed(2)}</span>
                 </div>
