@@ -62,7 +62,7 @@ const Cart = () => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
-  const shipping = cart.length ? 300 : 0;
+  const shipping = cart.length ? 30000000 : 0;
   const discountAmount = (subTotal * discount) / 100;
   const total = subTotal + shipping - discountAmount;
 
