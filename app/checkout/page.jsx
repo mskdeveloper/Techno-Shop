@@ -5,6 +5,7 @@ import PaymentOption from "./PaymentOption";
 const page = () => {
   const [cart, setCart] = useState([]);
   const [selectedPayment, setSelectedPayment] = useState("bank");
+  const [loading, setLoading] = useState(false);
   const [discount, setDiscount] = useState(1000000);
 
   useEffect(() => {
@@ -30,6 +31,49 @@ const page = () => {
   );
   const shipping = cart.length > 0 ? 1500000 : 0;
   const total = subtotal + shipping - discount;
+
+  const handleCheckout = async () => {
+    try {
+      setLoading(true);
+      const amount = Math.round(total);
+      const orderId = `order_${Date.now()}`;
+
+      const payload = {
+        amount,
+        orderId,
+        description: `خرید از فروشگاه - ${orderId}`,
+        mobile: "",
+      };
+
+      const res = await fetch("/api/zibal/request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+      setLoading(false);
+
+      // Zibal معمولاً توکن یا لینک بازگشتی می‌دهد. اگر token برگشت، به آدرس شروع هدایت می‌کنیم
+      // پاسخ دقیق را بررسی کنید (مثلاً data.result, data.trackId, data.token)
+      if (data && data.token) {
+        const paymentUrl = `https://gateway.zibal.ir/start/${data.token}`;
+        window.location.href = paymentUrl;
+        return;
+      }
+
+      // بعضی پاسخ‌ها مستقیم لینک می‌دهند
+      if (data && data.url) {
+        window.location.href = data.url;
+        return;
+      }
+
+      alert("خطا در ایجاد درخواست پرداخت. پاسخ: " + JSON.stringify(data));
+    } catch (err) {
+      setLoading(false);
+      alert("خطا در برقراری ارتباط با سرور: " + err.message);
+    }
+  };
 
   return (
     <>
@@ -236,8 +280,12 @@ const page = () => {
                 قوانین را خواندم و قبول دارم
               </label>
             </div>
-            <button className="mt-6 w-full py-3 bg-yellow-400 hover:bg-yellow-500 ">
-              ثبت سفارش
+            <button
+              onClick={handleCheckout}
+              disabled={loading}
+              className="mt-6 w-full py-3 bg-yellow-400 hover:bg-yellow-500 disabled:opacity-50"
+            >
+              {loading ? "در حال هدایت به درگاه..." : "ثبت سفارش"}
             </button>
           </div>
         </div>
